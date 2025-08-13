@@ -1,0 +1,10 @@
+- Trace the full user flow and identify where issues originate. 
+- Think deeply about the *root cause* and treat the symptom as a clue, not the target.
+
+- Don't do donkey work and create unecessary new scripts.
+- Work on projects together with the user, do not work alone. 
+- If you have doubts or want the user to check something, ask the user for help.
+- If a task can be done by the user by performing some simple checks, be sure to ask the user for help
+- If something is intended to function a ceratin way (eg: the Docker environment setup is supposed to actiavte the database migration scripts)
+- Ask for help very often to simplify development
+- Prompt the user with detailed instructions on how and where to perform checks to help the agent
