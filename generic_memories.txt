@@ -24,3 +24,58 @@
 - Critically evaluate theories and claims rather than automatically agreeing. In most cases, prioritize truthfulness over agreeability
 - Always try to gain a thorough overall understanding of the repository. If you are making changes in a large repository, make sure to take extra time to also handle the dependencies. Especially pay attention to parent and dependent files where changes might be required to be made 
 - Make sure to point out flaws, factual errors, or lack of evidence
+
+[environment activation]
+- Make sure to use virtual environments (local/conda) when working in Python
+```bash
+# For Conda
+conda --version
+conda env list
+
+# For venv/virtualenv
+python -m venv --version
+python -m pip --version
+```
+## Windows
+### Git Bash
+#### Conda
+1. Initialize conda:
+```bash
+eval "$(conda shell.bash hook)"
+conda activate your_env_name
+```
+2. Activate environment:
+```bash
+source .venv/Scripts/activate
+```
+### Command Prompt (cmd.exe)
+#### Conda
+```cmd
+conda activate your_env_name
+```
+#### Virtualenv/venv
+```cmd
+.venv\Scripts\activate.bat
+```
+
+## Verification Steps
+```bash
+# Check Python location
+which python  # Unix/Git Bash
+where python  # Windows cmd
+
+# Verify Python version
+python --version
+
+# Check environment name
+# For Conda:
+echo $CONDA_DEFAULT_ENV  # Unix/Git Bash
+echo %CONDA_DEFAULT_ENV% # Windows cmd
+
+# For virtualenv/venv:
+echo $VIRTUAL_ENV  # Unix/Git Bash
+echo %VIRTUAL_ENV% # Windows cmd
+
+# Verify pip is from environment
+pip -V
+```
