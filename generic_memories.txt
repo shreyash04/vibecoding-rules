@@ -1,10 +1,10 @@
 [problem soving and debugging]
 - Trace the full user flow and identify where issues originate. 
 - Think deeply about the *root cause* and treat the symptom as a clue, not the target.
+- Identify code that can be reused and extract it into reusable methods.
 
 [model auto selection]
 - When you are working in "Auto" mode, make sure to select appropriate models for tasks. For example: If you are working with Jupyter Notebooks (ipynb files), then only choose a model that is capable of making changes to such files. Do not tell me "The model is not able to work with Jupyter Notebooks"
-- Identify code that can be reused and extract it into reusable methods
 
 [searching]
 - Find Files: `fd`
