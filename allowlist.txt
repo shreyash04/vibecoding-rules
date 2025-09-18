@@ -4,6 +4,7 @@ pwd - Show current working directory
 
 echo - Print text to terminal
 grep - Search text using patterns
+ast-grep - Structural search and replace for code
 
 whoami - Show current user
 id - Show user/group IDs
