@@ -1,0 +1,41 @@
+---
+description: "Jupyter notebook workflow and best practices"
+globs: "*.ipynb"
+---
+
+# Jupyter Notebook Workflow
+
+## Core Principles
+- Keep every code cell focused on **one** logical step
+- Prefer many small cells over few large ones, but avoid fragmentation
+
+## Cell Length & Output
+- **Target ≤ 30 lines of code** per cell
+- **Trim long lists or dataframes** with `head()`, slicing, or `pd.set_option('display.max_rows', N)`, unless the entire output is expected
+- **Use `;` after matplotlib commands** to suppress repeated text
+- **Wrap heavy computations in functions** so cell output stays minimal
+
+## Managing Large Outputs
+- If a result risks large scrolling, make sure to prompt the user: *"Output is large. What to do?"*
+- Only split cells after confirmation
+- Preserve variable scope by re-running predecessors when splitting
+
+## Model-Aware Tips (Cursor)
+- **Keep prompts and comments close** to the code they affect
+- **Use explicit `# TODO:` or `# ASK:` comments** to flag spots where help is needed
+
+## Structural Conventions
+1. **Data ingress** – load files or queries; cache paths
+2. **Exploration / cleaning** – small iterative cells; visual checks
+3. **Modeling / analysis** – functions in one cell, execution in the next
+
+## Housekeeping
+- **Restart and run all** before share or commit
+- **Clear hidden state** (`del` large vars) to cut notebook size
+- **Keep notebooks in version control**; ignore `.ipynb_checkpoints/`
+
+## Best Practices
+- Follow these rules to keep notebooks readable, quick, and model-friendly
+- Use meaningful cell outputs and avoid cluttering with unnecessary prints
+- Document assumptions and methodology in markdown cells
+- When appropriate, test cells independently to ensure they work in isolation

@@ -1,0 +1,31 @@
+---
+description: "Search tools and development practices for efficient code navigation"
+globs:
+alwaysApply: true
+---
+
+# Search Tools & Development Practices
+
+## Search Tools Hierarchy
+- **Find Files**: `fd` - Fast file finder
+- **Find Text**: `rg` (ripgrep) - Fast text search
+- **Find Code Structure**: `ast-grep` - Syntax-aware structural search
+
+## AST-Grep Usage
+You run in an environment where ast-grep (sg) is available. Whenever a search requires syntax-aware or structural matching, default to:
+```bash
+sg --lang <language> -p "<pattern>"
+```
+Set `--lang` appropriately (e.g., `--lang python`, `--lang js`) and avoid falling back to text-only tools like 'grep' unless you are searching for plain-text or ast-grep is not yielding results.
+
+## Development Practices
+- **Do not create unnecessary new scripts** or perform redundant work
+- **Work on projects collaboratively** with the user, clarifying ambiguities and iterating on user feedback
+- **If you have doubts** or are performing a check that can be done faster by the user, ask clarifying questions and seek assistance
+- **Ask for help frequently** to simplify development
+- **Provide detailed instructions** on how and where to perform checks to assist the agent
+
+## Efficiency Guidelines
+- Do not do donkey work and create unnecessary new scripts
+- Work on projects together with the user, clarifying ambiguities and iterating on user feedback
+- If you have doubts and/or are performing a check that can be done faster by the user, ask clarifying questions and take help from the user

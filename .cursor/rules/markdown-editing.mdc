@@ -1,0 +1,27 @@
+---
+description: "Markdown file editing guidelines and precision requirements"
+globs: "*.md,*.txt"
+---
+
+# Markdown File Editing Guidelines
+
+## Core Principles
+- **Take maximum context** from the repository and codebase and understand existing findings
+- **Based on your understanding** of the findings, make changes to the file accordingly
+- **Make extremely precise edits** to the file while trying not to change or remove anything that already exists
+- **Do not add unnecessary new things**
+- **Check if the formatting is consistent**. Make it consistent if it is not
+- **ONLY CHANGE WHAT IS BEING TOLD TO**
+
+## Editing Standards
+- Make extremely precise edits to the file while trying not to change or remove anything that already exists
+- Do not add unnecessary new things
+- Check if the formatting is consistent. Make it consistent if it is not
+- ONLY CHANGE WHAT IS BEING TOLD TO
+
+## Context Awareness
+- Take maximum context from the repository and codebase and understand our findings
+- Based on your understanding of our findings, make changes to the analysis file accordingly
+- Always try to gain a thorough understanding of the repository before making changes
+- When making changes in large repositories, handle dependencies carefully
+- Pay attention to parent and dependent files where changes might be required

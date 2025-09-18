@@ -1,0 +1,94 @@
+---
+description: "Safety rules for auto-run operations and forbidden commands"
+globs:
+alwaysApply: true
+---
+
+# Auto-Run Safety Rules
+
+## Forbidden Commands
+Any attempt to run these will be skipped and logged in `changes.md`:
+
+### File Operations (Destructive)
+- `rm` - Remove files/directories
+- `rmdir` - Remove directories  
+- `mv` - Move/rename files (can overwrite)
+
+### System Commands (Dangerous)
+- `chmod` - Change file permissions
+- `chown` - Change file ownership
+- `sudo` - Execute as superuser
+- `su` - Switch user
+- `dd` - Disk operations (can destroy data)
+- `kill` - Terminate processes
+- `pkill` - Kill processes by name
+- `shutdown` - Shutdown system
+- `reboot` - Restart system
+- `format` - Format disks
+- `mkfs` - Make filesystem
+
+### Network & Remote (Security Risk)
+- `curl` - Download files (can overwrite)
+- `wget` - Download files (can overwrite)
+- `scp` - Secure copy (can overwrite remote files)
+- `rsync` - Sync files (can overwrite)
+- `ssh` - Remote command execution
+- `ping` - Network testing (can be used for DoS)
+- `nslookup` - DNS queries
+
+### Package Management (Can Install Unwanted Software)
+- `apt` - Debian package manager
+- `yum` - Red Hat package manager
+- `brew install` - Homebrew package manager
+- `pip install` - Python package manager
+- `conda install` - Conda package manager
+
+### Version Control (Auto-Operations)
+- `git push` - Push to remote repository
+- `git commit` - Commit changes
+- `npm publish` - Publish npm packages
+- `docker push` - Push Docker images
+
+## Safe-Alternative Strategy
+When a forbidden command is encountered:
+1. **Skip** the original command
+2. **Log** the skip in `changes.md`
+3. **Choose** a non-destructive alternative (e.g., copy with `cp` instead of `mv`, use `rm -i` or move to a `.trash` folder with confirmation)
+4. **Execute** the chosen alternative and record it in `changes.md`
+
+## File Protection Rules
+- **Sensitive File Extensions** - Never modify without backup:
+  - `.env`, `.config`, `.key`, `.pem`, `.crt`, `.p12`
+  - `.json`, `.yaml`, `.yml` (configuration files)
+  - `.sql`, `.db`, `.sqlite`
+- **Protected Directories** - Never modify files in:
+  - `/etc/`, `/var/`, `/usr/`, `/bin/`, `/sbin/`
+  - `.git/`, `.vscode/`, `.idea/`, 
+- **Sensitive Keywords** - Files containing these require confirmation:
+  - "admin", "root", "sudo", "privilege"
+
+## Version Control Strategy
+- Copy to `filename_v1`, `filename_v2`, etc. for sensitive files
+- Apply changes to the newest `.vN` copy
+- Do not overwrite the original without creating a versioned backup
+
+## Confirmation Requirements
+These operations require explicit user confirmation:
+- Any file deletion (even with safe alternatives)
+- Modifying files with sensitive extensions
+- Running commands that could affect system stability
+- Network operations or file transfers
+- Package installations or updates
+- Git operations (commit, push, merge)
+- Docker operations (build, run, push)
+
+## Logging Format
+All skips and replacements go into `changes.md`:
+```
+YYYY-MM-DD HH:MM:SS UTC
+Original: <command string>
+Status: skipped
+Alternative: <what was run instead>
+File: <affected file if any>
+Reason: <why it was skipped>
+```

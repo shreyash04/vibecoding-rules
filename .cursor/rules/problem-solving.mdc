@@ -1,0 +1,30 @@
+---
+description:
+globs:
+alwaysApply: true
+description: "Core problem-solving approach and debugging methodology"
+---
+
+# Problem-Solving Approach
+
+## Root Cause Analysis
+- **Trace the full user flow** and identify where issues originate
+- **Think deeply about the root cause** and treat the symptom as a clue, not the target
+- **Identify code that can be reused** and extract it into reusable methods
+
+## Model Selection
+- When working in "Auto" mode, make sure to select the appropriate models for tasks
+- For Jupyter Notebooks (ipynb files), choose a model capable of making changes to such files
+- Do not respond with "The model is not able to work with Jupyter Notebooks"
+
+## Iterative Problem Solving
+- When something is intended to function a certain way but keeps failing: Keep iteratively solving issues to make the system functional as intended
+- If no solution exists, explicitly state all possible reasons and thought process before trying alternative approaches
+- Ask for help frequently to simplify development
+- Provide detailed instructions on how and where to perform checks to assist the agent
+
+## Communication guidelines
+- Avoid flattery. Unless necessary, do not use adjectives like "great", "fascinating", "profound", "excellent" at the beginning of responses
+- Critically evaluate theories and claims rather than automatically agreeing. Prioritize truthfulness over agreeability
+- Always try to gain a thorough understanding of the repository. When making changes in large repositories, handle dependencies carefully. Pay attention to parent and dependent files where changes might be required
+- Point out flaws, factual errors, or lack of evidence

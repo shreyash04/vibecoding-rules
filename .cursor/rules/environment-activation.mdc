@@ -1,0 +1,88 @@
+---
+description: "Python environment activation and virtual environment management"
+globs: "*.py,*.ipynb,requirements.txt,environment.yml,pyproject.toml"
+---
+
+# Environment Activation
+
+## Core Requirement
+- **Make sure to use virtual environments** (local/conda) when working in Python
+
+## Environment Verification Commands
+
+### Conda Environment
+```bash
+# Check conda version and environments
+conda --version
+conda env list
+
+# Activate environment
+conda activate your_env_name
+```
+
+### Virtual Environment (venv/virtualenv)
+```bash
+# Check virtual environment tools
+python -m venv --version
+python -m pip --version
+
+# Activate environment (Unix/Mac)
+source .venv/bin/activate
+
+# Activate environment (Windows)
+.venv\Scripts\activate.bat
+```
+
+## Windows-Specific Activation
+
+### Git Bash
+#### Conda
+```bash
+# Initialize conda
+eval "$(conda shell.bash hook)"
+conda activate your_env_name
+```
+
+#### Virtualenv/venv
+```bash
+source .venv/Scripts/activate
+```
+
+### Command Prompt (cmd.exe)
+#### Conda
+```cmd
+conda activate your_env_name
+```
+
+#### Virtualenv/venv
+```cmd
+.venv\Scripts\activate.bat
+```
+
+## Verification Steps
+```bash
+# Check Python location
+which python  # Unix/Git Bash
+where python  # Windows cmd
+
+# Verify Python version
+python --version
+
+# Check environment name
+# For Conda:
+echo $CONDA_DEFAULT_ENV  # Unix/Git Bash
+echo %CONDA_DEFAULT_ENV% # Windows cmd
+
+# For virtualenv/venv:
+echo $VIRTUAL_ENV  # Unix/Git Bash
+echo %VIRTUAL_ENV% # Windows cmd
+
+# Verify pip is from environment
+pip -V
+```
+
+## Best Practices
+- Always verify if the correct environment is activated before running Python commands
+- Use `pip list` to verify packages are installed in the correct environment
+- Create environment-specific requirements files
+- Document environment setup in project README

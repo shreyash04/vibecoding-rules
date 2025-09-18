@@ -1,0 +1,20 @@
+---
+description: "Project overview and key reference files"
+globs: 
+alwaysApply: true
+---
+
+# Vibecoding Rules Project Overview
+
+This repository contains comprehensive rules and guardrails for vibecoding development practices.
+
+## Project Structure
+The `.cursor/rules/` directory contains Cursor-specific rule files that implement the guidelines from the reference files above. These rules are automatically applied based on file types and contexts.
+
+## Core Principles
+1. **Safety First** - Comprehensive safety rules for auto-run operations
+2. **Root Cause Analysis** - Deep problem-solving approach
+3. **Precision Editing** - Exact, minimal changes to existing files
+4. **Environment Management** - Proper Python virtual environment usage
+5. **Critical Thinking** - Honest, evidence-based communication
+6. **Efficient Workflows** - Optimal use of search tools and development practices

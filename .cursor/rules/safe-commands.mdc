@@ -1,0 +1,51 @@
+---
+description: "Allowlist of safe commands that can be executed without restrictions"
+globs:
+alwaysApply: true
+---
+
+# Safe Commands Allowlist
+
+## Navigation Commands
+- `cd` - Change directory
+- `ls` - List directory contents
+- `pwd` - Show current working directory
+
+## Text Processing Commands
+- `echo` - Print text to terminal
+- `grep` - Search text using patterns
+- `ast-grep` - Structural search and replace for code
+- `head` - Show beginning of files
+- `tail` - Show end of files
+
+## System Information Commands
+- `whoami` - Show current user
+- `id` - Show user/group IDs
+- `groups` - Show user groups
+- `date` - Show current date/time
+- `uptime` - Show system uptime
+- `uname` - Show system information
+- `ps` - Show running processes
+- `env` - Show environment variables
+
+## Command History & Information
+- `history` - Show command history
+- `alias` - Show aliases
+- `type` - Show command type
+- `which` - Show command location
+- `whereis` - Show command locations
+- `whatis` - Show command description
+
+## Environment Management
+- `conda env` - Show conda environment information
+
+## Version Control (Read-Only)
+- `git status` - Show git repository status
+- `git log` - Show commit history
+- `git diff` - Show changes between commits or branches
+- `git remote` - Show remote repositories
+
+## Usage Guidelines
+- These commands are considered safe and can be executed without additional confirmation
+- Commands not on this list should be evaluated for safety before execution
+- When in doubt, ask for user confirmation before running commands
