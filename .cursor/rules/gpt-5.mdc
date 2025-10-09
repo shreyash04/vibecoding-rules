@@ -1,0 +1,12 @@
+---
+description: "TypeScript and JavaScript coding guidelines for safe practices"
+globs: "*.ts,*.js,*.tsx,*.jsx"
+alwaysApply: true
+---
+
+# TypeScript and JavaScript Guidelines
+
+## Core Safety Rules
+- Never use dynamic imports (unless asked to) like `await import(..)`
+- Never cast to `any`
+- Do not add extra defensive checks or try/catch blocks
